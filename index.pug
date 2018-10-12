@@ -1,0 +1,14 @@
+doctype html
+html
+head
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    style
+        include assets/app.css
+body
+    div
+        include partials/header.pug
+        include partials/form.pug
+
+    script(src="https://js.stripe.com/v3/")
+    script
+        include assets/app.js
