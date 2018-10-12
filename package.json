@@ -1,0 +1,16 @@
+{
+  "name": "rick-palomus-llc",
+  "version": "0.0.0",
+  "description": "rick palomus llc frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Kevin Diem",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.20.2"
+  }
+}
