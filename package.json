@@ -4,13 +4,21 @@
   "description": "rick palomus llc frontend",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack",
+    "build:watch": "webpack -w"
   },
   "author": "Kevin Diem",
   "license": "MIT",
   "devDependencies": {
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
-    "webpack": "^4.20.2"
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "css-loader": "^1.0.0",
+    "dotenv": "^6.1.0",
+    "style-loader": "^0.23.1"
   }
 }
