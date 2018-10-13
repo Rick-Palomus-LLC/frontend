@@ -10,14 +10,25 @@ module.exports = {
         filename: 'bundle.js',
     },
     module: {
-        rules: [{
-            test: /\.sass$/,
-            use: [
-                "style-loader", // creates style nodes from JS strings
-                "css-loader", // translates CSS into CommonJS
-                "sass-loader" // compiles Sass to CSS, using Node Sass by default
-            ]
-        }]
+        rules: [
+            {
+                test: /\.sass$/,
+                use: [
+                    "style-loader", // creates style nodes from JS strings
+                    "css-loader", // translates CSS into CommonJS
+                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
+                ]
+            },
+            {
+                test: /\.pug$/,
+                use: [
+                    "file-loader?name=[path]../../[name].html",
+                    "extract-loader",
+                    "html-loader",
+                    "pug-html-loader"
+                ]
+            }
+        ]
     },
     plugins: [
         new webpack.DefinePlugin({
