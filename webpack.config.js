@@ -17,5 +17,12 @@ module.exports = {
                 "sass-loader" // compiles Sass to CSS, using Node Sass by default
             ]
         }]
-    }
+    },
+    plugins: [
+        new webpack.DefinePlugin({
+            ENV: {
+                STRIPE_KEY: process.env.STRIPE_PUBLISHABLE_KEY
+            }
+        })
+    ]
 };
