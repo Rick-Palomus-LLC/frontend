@@ -1,6 +1,5 @@
 export default class StripeUtil {
-    _card;
-
+    
     constructor(){
         this._stripe = Stripe(ENV.STRIPE_PUBLISHABLE_KEY);
     }
