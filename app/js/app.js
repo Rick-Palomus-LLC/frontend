@@ -18,15 +18,29 @@ import StripeUtil from './lib/stripeUtil';
     }
 
     function appendError(error) {
-
+        _appendNotification(document.querySelector('.error'), message);
     }
 
     function appendSuccessMessage(message) {
+        _appendNotification(document.querySelector('.success'), message);
+    }
 
+    function _appendNotification(el, message) {
+        el.textContent = message;
+        el.classList.remove('hidden');
+    }
+
+    function clearNotifications() {
+        const notifications = document.querySelectorAll('.notification');
+
+        notifications.forEach(el => el.textContent = '' && el.classList.add('hidden'));
     }
 
     function getFormFields() {
-        return {};
+        return {
+            name: getValue('name'),
+            number: getValue('number')
+        }
     }
 
     async function submitForm(){
@@ -44,6 +58,8 @@ import StripeUtil from './lib/stripeUtil';
     async function submitHandler(e){
         e.preventDefault();
         
+        clearNotifications();
+
         try {
             const message = await submitForm();
 
@@ -52,5 +68,10 @@ import StripeUtil from './lib/stripeUtil';
         catch (error) {
             appendError(error);
         }
+    }
+
+    function getValue(name){
+        const el = document.querySelector(`input[name="${name}"]`);
+        return el && el.value;
     }
 })();
