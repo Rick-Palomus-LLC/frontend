@@ -1,7 +1,7 @@
 export default class StripeUtil {
     
     constructor(){
-        this._stripe = Stripe(ENV.STRIPE_PUBLISHABLE_KEY);
+        this._stripe = Stripe('ENV.STRIPE_PUBLISHABLE_KEY');
     }
 
     addCard(selector){

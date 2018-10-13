@@ -2,7 +2,7 @@ import '../sass/app.sass';
 import '../../index.pug';
 
 import FormUtil from './lib/formUtil';
-import StipeUtil from './lib/stripeUtil';
+import StripeUtil from './lib/stripeUtil';
 
 (() => {
     const stripeUtil = new StripeUtil();
