@@ -1,9 +1,11 @@
-const stripe = Stripe('ENV.STRIPE_PUBLISHABLE_KEY');
-
-export default StripeUtil = {
+const StripeUtil = {
     addCard: addCard,
     submitPayment: submitPayment
 }
+
+export default StripeUtil;
+
+const stripe = Stripe('ENV.STRIPE_PUBLISHABLE_KEY');
 
 function addCard(selector){
     const elements = stripe.elements();
