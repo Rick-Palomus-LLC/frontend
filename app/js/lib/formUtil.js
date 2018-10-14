@@ -1,6 +1,7 @@
-export default class FormUtil {
-    
-    submit(params) {
-        return Promise.resolve();
-    }
+export default FormUtil = {
+    submit: submit
+}
+
+function submit(params){
+    return Promise.resolve();
 }
