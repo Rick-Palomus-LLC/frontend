@@ -5,16 +5,14 @@ import FormUtil from './lib/formUtil';
 import StripeUtil from './lib/stripeUtil';
 
 (() => {
-    const stripeUtil = new StripeUtil();
-
     document.addEventListener('DOMContentLoaded', () => init());
 
     function init(){
-        stripeUtil.addCard('#credit-card');
+        const card = StripeUtil.addCard('#credit-card');
 
         const form = document.getElementById('call-form');
 
-        form.addEventListener('submit', submitHandler);
+        form.addEventListener('submit', submitHandler.bind(this, card));
     }
 
     function appendError(error) {
@@ -43,8 +41,8 @@ import StripeUtil from './lib/stripeUtil';
         }
     }
 
-    async function submitForm(){
-        const token = await stripeUtil.submitPayment();
+    async function submitForm(card){
+        const token = await StripeUtil.submitPayment(card);
 
         const fields = getFormFields();
 
