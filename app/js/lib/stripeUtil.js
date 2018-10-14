@@ -1,6 +1,6 @@
 const stripe = Stripe('ENV.STRIPE_PUBLISHABLE_KEY');
 
-export default const StripeUtil = {
+export default StripeUtil = {
     addCard: addCard,
     submitPayment: submitPayment
 }
